@@ -1,4 +1,9 @@
-<h3>Home</h3>
-<% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
+<h2>RSS Reader!</h2>
+
+<%= form_tag('/posts',:remote => true, :method => :get) do |f| %>
+  <%= text_field_tag 'url' %>
+  <%= submit_tag 'Get posts!', :class => 'btn btn-success' %>
 <% end %>
+
+<div id='rss-results'>
+</div>
