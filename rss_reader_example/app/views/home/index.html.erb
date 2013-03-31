@@ -2,7 +2,7 @@
 
 <%= form_tag('/posts',:remote => true, :method => :get) do |f| %>
   <%= text_field_tag 'url' %>
-  <%= submit_tag 'Get posts!', :class => 'btn btn-success' %>
+  <%= submit_tag 'Get posts!', :class => 'btn btn-success', :id => 'get_posts' %>
 <% end %>
 
 <div id='rss-results'>

@@ -7,6 +7,9 @@ describe HomeController do
       get 'index'
       response.should be_success
     end
+
+    it "should return js" do
+    end
   end
 
 end
