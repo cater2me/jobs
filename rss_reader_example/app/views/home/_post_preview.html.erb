@@ -3,7 +3,7 @@
 <% @posts.each do |post| %>
 
   <div class='entry' >
-    <span class='title' data-toggle="tooltip" data-placement="top" title="<%= post.preview %>"><%= link_to raw(post.title), '/posts/' + Base64.encode64(post.feed_url) + '/' + Base64.encode64(raw(post.title)), :data => {:toggle=>"modal", :target=>"#modal"}, :remote => true, :class => "title" %> <span>by <%= post.author %></span></span>
+    <span class='title' data-toggle="tooltip" data-placement="top" title="<%= post[:preview] %>"><%= link_to raw(post[:title]), '/posts/' + Base64.encode64(post[:feed_url]) + '/' + Base64.encode64(raw(post[:title])), :data => {:toggle=>"modal", :target=>"#modal"}, :remote => true, :class => "title" %> <span>by <%= post[:author] %></span></span>
   </div>
 
 <% end %>
