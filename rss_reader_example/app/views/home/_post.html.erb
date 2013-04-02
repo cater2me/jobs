@@ -1,8 +1,1 @@
-<% @posts.each do |post| %>
-  <div class='post'>
-    <div class='title'><b>Title: </b><p><%= raw post.title %></p></div>
-    <div class='author'><b>Author: </b><p><%= raw post.author %></p></div>
-    <div class='preview'><b>Preview: </b><p><%= raw post.preview %></p></div>
-  </div>
-<% end %>
-
+<%= raw @post.content %>
