@@ -8,11 +8,17 @@ When /^I go to (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
-When /^I press "([^\"]*)"$/ do |button|
-  click_button(button)
+When /^I press the first "([^\"]*)"$/ do |button|
+  first(:button, button).click
 end
 
 When /^I click "([^\"]*)"$/ do |link|
+  within('#rss-results') do
+    first(:xpath, "//a[@class='#{link}'])[1]").click
+  end
+end
+
+When /^I click on link "([^\"]*)"$/ do |link|
   click_link(link)
 end
 
@@ -87,3 +93,7 @@ end
 Then /^page should have (.+) message "([^\"]*)"$/ do |type, text|
   page.has_css?("p.#{type}", :text => text, :visible => true)
 end
+
+Then /^I should see the "([^\"]*)" div$/ do  |div_name|
+  page.has_xpath?("//div[@id='#{div_name}']") 
+end 

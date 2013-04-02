@@ -3,10 +3,11 @@ Feature: View posts
   A user
   Should be able to view posts
 
-    Scenario: User clicks "Get Posts!"
+    @javascript
+    Scenario: User clicks "Get Posts! and displays modal"
       When I go to the home page
       And I fill in "url" with "http://feeds.feedburner.com/PaulDixExplainsNothing"
-      When I press "get_posts"
-      Then I should see "Title:"
-      Then I should see "Author:"
-      Then I should see "Preview:"
+      When I press the first "get_posts"
+      Then I should see the "entry" div
+      When I click on link "title"
+      Then I should see the "modal" div
