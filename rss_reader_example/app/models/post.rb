@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :author, :content, :title, :url
+  attr_accessible :author, :content, :title, :url, :preview
 
   validates :url, :uniqueness => true
 
