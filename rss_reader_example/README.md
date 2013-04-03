@@ -1,3 +1,7 @@
+# RSS Reader 
+
+I created an RSS reader that uses jQuery and Rails UJS to create a single page application. Simply enter a valid RSS/Atom URL and the page will be updated to display your articles. The articles have tool tips set up on hover so you can see a preview. When you click on a link, the article will be shown in a modal unless the feed prohibits that. In that case, you will be shown a link to the article. 
+
 Rss Reader Example
 ========================
 
