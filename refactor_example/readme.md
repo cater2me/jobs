@@ -36,7 +36,7 @@ For example, the first section of code under the first comment is simply trying 
 
 One ugly thing about this code is that it is using String.new a lot when it is not needed. If we were truly manipulating the strings we might need copies of the originals, but we are not doing that. As long as the method we call on the string isn't a destructive (bang!) method, the return value will reflect the message sent to the object, but the original object will remain in tact. 
 
-Instead of searching for the %CODE% string via #index, I simply used gsub which takes a regular express, and a string to replace any matches of that regex in the string that gsub was called on. Chaining two calls to #gsub together allows us to ultimately return a string that replaces %CODE% and %ALTCODE% with the proper strings. The test given in the example passes with my code, shown below. 
+Instead of searching for the %CODE% string via #index, I simply used gsub which takes a regular expression, and a string to replace any matches of that regex in the string that gsub was called on. Chaining two calls to #gsub together allows us to ultimately return a string that replaces %CODE% and %ALTCODE% with the proper strings. The test given in the example passes with my code, shown below. 
 
 ````ruby
 def template(source_template, req_id)
