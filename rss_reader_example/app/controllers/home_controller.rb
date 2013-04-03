@@ -8,7 +8,7 @@ class HomeController < ApplicationController
   def posts
     feed = Feedzirra::Feed.fetch_and_parse(params[:url])
     
-    if feed.try(:entries).nil?
+    if feed == 0 || params[:url].blank?
       render 'invalid_url.js.erb' 
       return
     end
