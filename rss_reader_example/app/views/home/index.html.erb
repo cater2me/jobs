@@ -1,11 +1,6 @@
 <h2>RSS Reader!</h2>
 
-<%= form_tag('/posts',:remote => true, :method => :get) do |f| %>
-  <div class='input-append'>
-    <%= text_field_tag 'url' %>
-    <%= submit_tag 'Get posts!', :class => 'btn btn-success', :id => 'get_posts' %>
-  </div>
-<% end %>
+<%= link_to "Extract from a new feed",new_feed_path, :class => 'btn btn-success' %>
 
 <div id='rss-results'>
 </div>
