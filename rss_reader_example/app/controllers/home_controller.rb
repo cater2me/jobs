@@ -16,8 +16,9 @@ class HomeController < ApplicationController
     @posts = []
     feed.entries.first(10).each do |entry|
       # stripped tags from preview
-      post = {:title => entry.title, :author => entry.author, :feed_url => feed.feed_url, :url => entry.url,
-        :preview => entry.summary.gsub( %r{</?[^>]+?>}, '' )}
+      summary = entry.summary || "No summary was provided by the feed."
+      post = {:title => entry.title, :author => entry.author || "...someone", :feed_url => feed.feed_url, :url => entry.url,
+        :preview => summary.gsub( %r{</?[^>]+?>}, '' )}
 
       @posts << post
     end
