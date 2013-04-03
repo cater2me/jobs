@@ -3,7 +3,7 @@ require 'feedzirra'
 class Feed < ActiveRecord::Base
   attr_accessible :title, :url
 
-  validates :url, :uniqueness => true
+  validates :url, :uniqueness => true, :presence => true
 
   has_many :posts, :dependent => :destroy
 
