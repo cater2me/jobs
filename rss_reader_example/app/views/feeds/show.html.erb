@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <b>Url:</b>
   <%= @feed.url %>
@@ -9,6 +7,12 @@
   <b>Title:</b>
   <%= @feed.title %>
 </p>
+
+<% @feed.posts.each do |post| %>
+  <div id="posts">
+    <%= link_to raw(post.title), '#' %>
+  </div>
+<% end %>
 
 
 <%= link_to 'Edit', edit_feed_path(@feed) %> |

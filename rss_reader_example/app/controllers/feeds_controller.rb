@@ -13,8 +13,8 @@ class FeedsController < ApplicationController
   # GET /feeds/1
   # GET /feeds/1.json
   def show
-    @feed = Feed.find(params[:id])
-
+    @feed = Feed.includes(:posts).find(params[:id])
+    logger.debug "Feed has #{@feed.posts.count} posts"
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @feed }
