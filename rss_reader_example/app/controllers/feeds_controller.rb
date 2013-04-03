@@ -14,7 +14,9 @@ class FeedsController < ApplicationController
   # GET /feeds/1.json
   def show
     @feed = Feed.includes(:posts).find(params[:id])
-    logger.debug "Feed has #{@feed.posts.count} posts"
+    @feed.fetch_posts
+    @feed.posts.sort_by {|p| p.published_date}
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @feed }
@@ -44,6 +46,7 @@ class FeedsController < ApplicationController
 
     respond_to do |format|
       if @feed.save
+        @feed.fetch_posts
         format.html { redirect_to @feed, notice: 'Feed was successfully created.' }
         format.json { render json: @feed, status: :created, location: @feed }
       else
