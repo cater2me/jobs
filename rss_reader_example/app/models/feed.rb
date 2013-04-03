@@ -1,6 +1,7 @@
 require 'feedzirra'
 
 class Feed < ActiveRecord::Base
+  after_create :fetch_posts
   attr_accessible :title, :url
 
   validates :url, :uniqueness => true, :presence => true
