@@ -16,7 +16,7 @@ class HomeController < ApplicationController
     @posts = []
     feed.entries.first(10).each do |entry|
       post = {:title => entry.title, :author => entry.author, :feed_url => feed.feed_url, :url => entry.url,
-        :preview => entry.content.gsub(%r{</?[^>]+?>}, '').split[0..15].join(" ") + "..."}
+        :preview => entry.summary}
 
       @posts << post
     end
@@ -29,7 +29,8 @@ class HomeController < ApplicationController
 
     feed = Feedzirra::Feed.fetch_and_parse(feed_url)
 
-    posts = feed.entries.first(10).select {|entry| entry.title == post_title}
+    # get the first 15 incase anything was released...a little hacky but its okay
+    posts = feed.entries.first(15).select {|entry| entry.title == post_title}
     @post = posts.first
 
     render 'post.js.erb'
