@@ -1,7 +1,5 @@
 require 'feedzirra'
-require 'open-uri'
-require 'ostruct'
-require 'base64'
+
 
 class HomeController < ApplicationController
 
