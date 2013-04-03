@@ -1,3 +1,11 @@
+<%= content_for :head do %>
+  <script>
+    $(document).ready(function() {
+      $('.post').tooltip();
+    });
+  </script>
+<% end %>
+
 <p>
   <b>Title:</b>
   <%= @feed.title %>
@@ -8,9 +16,10 @@
 <div id="posts">
   <% @feed.posts.each do |post| %>
 
-  <div class='post'>
-    <span data-toggle="tooltip" data-placement="top" title="<%= post.preview %>">
+  <div>
+    <span class='post' data-toggle="tooltip" data-placement="top" title="<%= post.preview %>">
       <%= link_to raw(post.title), "/feeds/#{post.feed_id}/posts/#{post.id}", :remote=>true, :data => {:toggle=>"modal", :target=>"#modal"} %>
+      <span class="author"> by <%= post.author %></span>
     </span>
   </div>
 
