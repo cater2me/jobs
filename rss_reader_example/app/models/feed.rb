@@ -14,7 +14,8 @@ class Feed < ActiveRecord::Base
     recently_fetched = self.posts.first(20)
     feed.entries.first(10).each do |entry|
       # strip tags from preview
-      post = Post.new(:preview => entry.summary.gsub( %r{</?[^>]+?>}, '' ), :author => entry.author, :content => entry.content, :title => entry.title, :url => entry.url)
+      summary = entry.summary || "No summary was provided by the feed."
+      post = Post.new(:preview => summary.gsub( %r{</?[^>]+?>}, '' ), :author => entry.author, :content => entry.content, :title => entry.title, :url => entry.url)
       post.feed = self
       post.save if recently_fetched.select {|rec| rec.url == post.url}.count == 0
     end
