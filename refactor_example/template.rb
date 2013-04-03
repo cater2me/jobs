@@ -1,10 +1,7 @@
 module Template
   def template(source_template, req_id)
     # Substitute for %CODE%
-    template = source_template.gsub(/%CODE%/, req_id)
-
-    # Substitute for %ALTCODE%
-    template.gsub!(/%ALTCODE%/, altcode(req_id))
+    template = source_template.gsub(/%CODE%/, req_id).gsub(/%ALTCODE%/, altcode(req_id))
   end
 
   def altcode(req_id)
