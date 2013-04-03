@@ -17,6 +17,7 @@ class Feed < ActiveRecord::Base
       summary = entry.summary || "No summary was provided by the feed."
       post = Post.new(:preview => summary.gsub( %r{</?[^>]+?>}, '' ), :author => entry.author || "...someone", :content => entry.content, :title => entry.title, :url => entry.url)
       post.feed = self
+      # only attempt to save if the post is not part of what I already have
       post.save if recently_fetched.select {|rec| rec.url == post.url}.count == 0
     end
     self.save
