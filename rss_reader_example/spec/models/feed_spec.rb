@@ -1,5 +1,11 @@
 require 'spec_helper'
 
 describe Feed do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:feed){FactoryGirl.create(:feed)}
+  subject{feed}
+  it {should respond_to :url}
+  it {should respond_to :title}
+  it {should respond_to :posts}
+
+  it { should validate_uniqueness_of(:url) }
 end

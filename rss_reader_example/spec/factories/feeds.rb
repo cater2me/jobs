@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :feed do
-    url "MyString"
-    title "MyString"
+    url "http://feeds.feedburner.com/PaulDixExplainsNothing"
+    title "Paul Dix"
   end
 end
