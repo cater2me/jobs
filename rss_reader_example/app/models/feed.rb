@@ -14,7 +14,8 @@ class Feed < ActiveRecord::Base
       feed = Feedzirra::Feed.fetch_and_parse(self.url)
       self.title = feed.title
       feed.entries.first(10).each do |entry|
-        post = Post.new(:preview => entry.summary, :author => entry.author, :content => entry.content, :title => entry.title, :url => entry.url)
+        # strip tags from preview
+        post = Post.new(:preview => entry.summary.gsub( %r{</?[^>]+?>}, '' ), :author => entry.author, :content => entry.content, :title => entry.title, :url => entry.url)
         post.feed = self
         post.save
       end
