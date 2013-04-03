@@ -14,7 +14,8 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
-
+    logger.debug "Content is: @post.content"
+    logger.debug "BLANK!" if @post.content.blank?
     respond_to do |format|
       format.html # show.html.erb
       format.js { render 'show.js.erb' }
