@@ -1,0 +1,25 @@
+<script>
+	function modalClick(details)
+	{ 
+		$(".modal-body").html(details);
+	} 	 
+</script>
+
+<div class="row text-center">
+	<h3>Cater2Me Rss Reader</h3>
+		 
+	<div class="span9">
+		<%= simple_form_for :rss, :remote => true, :'data-update-target' => 'rss-results',  :html => { :class => 'form-horizontal form-search' },  :url=> rss_feed_path   do |f| %>
+			<%= f.input :url,   :input_html => { :class => "span6"}, :hint => "Enter your RSS/Atom feed url !!" %>
+			<%= f.button :submit, "Get Feed", :class => 'btn-primary' %>
+		<% end %>
+	</div>
+ </div>
+ 
+ 
+ <div id='rss-results'></div>
+ 
+  
+
+ 
+  
