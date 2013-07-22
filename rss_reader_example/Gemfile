@@ -1,0 +1,6 @@
+gem 'sinatra'
+
+gem 'rack-test'
+
+gem 'nokogiri'
+gem 'rspec'
