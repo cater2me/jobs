@@ -43,6 +43,7 @@ PLATFORMS
 DEPENDENCIES
   activesupport
   nokogiri
+  rack
   rack-test
   rspec
   sinatra
