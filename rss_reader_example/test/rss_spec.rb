@@ -1,4 +1,5 @@
 # Test cases for RSS reader
+# Since live rss feeds change often I am testing it from local xml file
 require_relative '../rss_reader.rb'
 require_relative 'spec_helper.rb'
 
@@ -18,7 +19,7 @@ describe 'RSS Reader' do
 	it "says RSS Reader" do
   	get '/'
   	last_response.should be_ok
-  	last_response.body.should == 'RSS Reader'
+  	last_response.body.should match 'RSS Reader'
 	end	
 
   it "should find the link" do

@@ -2,5 +2,7 @@ gem 'sinatra'
 
 gem 'rack-test'
 
+gem "activesupport"
+
 gem 'nokogiri'
 gem 'rspec'
