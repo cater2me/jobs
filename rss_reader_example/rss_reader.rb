@@ -7,6 +7,7 @@ require 'uri'
 
 def parse rss_contents
 	doc = Nokogiri::XML rss_contents
+	id = 0
   doc.search('item').map do |doc_item|
     item = {}
     item[:link] = doc_item.at('link') ? doc_item.at('link').text : 'No Link'
@@ -14,6 +15,8 @@ def parse rss_contents
     item[:pubDate] = doc_item.at('pubDate') ? doc_item.at('pubDate').text : 'No Publication Date'
     item[:author] = doc_item.at('author') ? doc_item.at('author').text : 'No Author'
     item[:description] = doc_item.at('description') ? doc_item.at('description').text : 'No description'
+    item[:id] = id
+    id += 1
     item
 	end
 end
