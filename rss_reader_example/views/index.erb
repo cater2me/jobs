@@ -4,29 +4,29 @@
 	3. Works even if RSS feed returns less than 10 results
 	4. Because I am using description to show preview, reader breaks in case description have iframe/video embeded, It won't show entried beyond that.
 -->
-<!DOCTYPE html>
-<html>
-  <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="user-scalable=yes, width=device-width" />
-<title>RSS Reader</title>
-</head>
-<body>
-  <h1>RSS Reader</h1>
-  <form method="POST" action="">
-  	<lable>RSS Source</label>
-	  <input type="text" name="rss_source" id="rss_source" />
-	  <input type="submit" name="Submit" />
-	</form>
 
-  <h2> First 10 entries in RSS FEED</h2>
-  <% @reads.last(10).each do |read| %>
-  	<em>Title:</em> <%= read[:title] %> |
-  	<em>Author:</em> <%= read[:author] %>  |
-  	<em>Published at:</em> <%= read[:pubDate] %><br>
-  	<em>Preview:</em> <%= read[:description].gsub(/<\/?[^>]*>/, "").truncate(50, :separator => ' ') %> |
-    <em>Link to original:</em><a href="<%= read[:link] %>"><%= read[:title] %></a>
-    <hr>
-  <% end %>
-</body>
-</html>
+<div class="row">
+  <div class="span12">
+    <form method="POST" action="" class=" form-inline">
+    	<!-- <lable>RSS Source</label> -->
+  	  <input type="text" name="rss_source" id="rss_source" class="input-xxlarge" placeholder="Enter RSS Source" />
+  	  <input type="submit" name="Submit RSS Source" class="btn btn-primary"/>
+  	</form>
+  </div>
+</div>
+
+
+<h2> First 10 entries in RSS FEED</h2>
+<div class="alert alert-info"><%= @feed %></div>
+<div class="row">
+  <div class="span12">
+    <% @reads.last(10).each do |read| %>
+    	<em>Title:</em> <%= read[:title] %> |
+    	<em>Author:</em> <%= read[:author] %>  |
+    	<em>Published at:</em> <%= read[:pubDate] %><br>
+    	<em>Preview:</em> <%= read[:description].gsub(/<\/?[^>]*>/, "").truncate(50, :separator => ' ') %> |
+      <em>Link to original:</em><a href="<%= read[:link] %>"><%= read[:title] %></a>
+      <hr>
+    <% end %>
+  </div>
+</div>  

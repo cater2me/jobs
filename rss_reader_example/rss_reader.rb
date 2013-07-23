@@ -21,6 +21,7 @@ end
 feed = 'http://api.flickr.com/services/feeds/groups_pool.gne?id=1373979@N22&lang=en-us&format=rss_200'
 
 get '/' do
+	@feed = feed # Need to show original location of feed
 	@reads = parse open(feed)
   erb :index
 end
@@ -29,6 +30,7 @@ post '/' do
 	puts feed
 	feed = valid_uri?(params[:rss_source]) ? params[:rss_source] : feed
 	@reads = parse open(feed)
+	@feed = feed # Need to show original location of feed
 	erb :index
 end
 
