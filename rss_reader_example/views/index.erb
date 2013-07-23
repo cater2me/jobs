@@ -16,17 +16,30 @@
 </div>
 
 
-<h2> First 10 entries in RSS FEED</h2>
+<h2> Last 10 entries in RSS FEED</h2>
 <div class="alert alert-info"><%= @feed %></div>
 <div class="row">
   <div class="span12">
-    <% @reads.last(10).each do |read| %>
-    	<em>Title:</em> <%= read[:title] %> |
-    	<em>Author:</em> <%= read[:author] %>  |
-    	<em>Published at:</em> <%= read[:pubDate] %><br>
-    	<em>Preview:</em> <%= read[:description].gsub(/<\/?[^>]*>/, "").truncate(50, :separator => ' ') %> |
-      <em>Link to original:</em><a href="<%= read[:link] %>"><%= read[:title] %></a>
-      <hr>
-    <% end %>
+    <table class="table table-hover">
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Published at</th>
+        <th>Preview</th>
+        <th>Link to original</th>
+        <th>Read full article</th>
+      </tr>
+      <% @reads.last(10).each do |read| %>
+      <tr>
+      	<td> <%= read[:title] %></td>
+      	<td> <%= read[:author] %></td>
+      	<td> <%= read[:pubDate] %></td>
+      	<td> <%= read[:description].gsub(/<\/?[^>]*>/, "").truncate(50, :separator => ' ') %></td>
+        <td> <a href="<%= read[:link] %>"><%= read[:title] %></td>
+        <td> <a href="<%= read[:link]%>" role="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Read Full Article</a></td>
+        <%= erb :overlay, :layout => false, :locals => { :read => read } %>
+      <tr>
+      <% end %>
+    </table>
   </div>
 </div>  
