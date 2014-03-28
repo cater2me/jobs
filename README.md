@@ -2,7 +2,7 @@
 
 In order to be considered for a position at [cater2.me](http://cater2.me/jobs) please complete the following exercises
 
-**Please note:** your code will be tested on Ruby 1.9.3 and the latest version of Chrome.
+**Please note:** your code will be tested on Ruby 2.0.0 and the latest version of Chrome.
 
 1. Fork this repository
 2. Add your resume to *resume* directory
