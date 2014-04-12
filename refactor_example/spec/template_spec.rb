@@ -1,4 +1,4 @@
-require_relative 'template'
+require_relative '../template'
 
 describe Template do
   include Template
