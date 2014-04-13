@@ -1,11 +1,16 @@
 module Template
-  def template(source_template, req_id)
-    #template = String.new(source_template) ##No need because source_tempalte is being passed as a string
-
+  def insert_codes(source_template, req_id)
     # Substitute for %CODE%
-    source_template.gsub!(/%CODE%/,req_id)
-
+    code_substitute(source_template, req_id)
+    alt_substitute(source_template, req_id)
     # Substitute for %ALTCODE%
+  end
+
+  def code_substitute(source_template, req_id)
+    source_template.gsub!(/%CODE%/,req_id)
+  end
+
+  def alt_substitute(source_template, req_id)
     source_template.gsub(/%ALTCODE%/, alter_req_id(req_id))
   end
 
