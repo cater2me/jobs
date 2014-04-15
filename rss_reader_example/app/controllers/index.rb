@@ -1,18 +1,13 @@
+require_relative '../models/rss'
+
 get '/' do
   # Look in app/views/index.erb
   erb :index
 end
 
-get '/bands' do
-  @band_names = Band.all.map(&:name)
-  erb :bands
+post '/results' do
+	thing = RssReader.new
+	@url = thing.read_rss(params["url"])
+	erb :results
 end
 
-post '/bands' do
-  new_band = Band.create!(name: params[:name])
-  new_band.name
-end
-
-get '/info' do
-  Demo.new(self).info
-end
