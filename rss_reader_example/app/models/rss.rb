@@ -2,20 +2,19 @@ require 'rss'
 
 class RssReader
 	def read_rss(link, amount = 10)
+		results = []
 		rss = RSS::Parser.parse(link, false)
 
 		rss.items.pop(amount).each do |item|
-			puts "Title: #{item.title}"
-			puts "Published: #{item.pubDate}"
-			puts "Author: #{item.author}"
+			items = ["Title: #{item.title}",
+			"Published: #{item.pubDate}",
+			"Author: #{item.author}"]
+			results << items
 		end
+		results
 	end
 
 end
-
-
-read = RssReader.new
-read.read_rss('http://www.michaelrigart.be/en/blog.rss', 1)
 
 
 #Display the title, time, author and preview of each entry

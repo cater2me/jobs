@@ -1,1 +1,9 @@
 <h1> Now, we are here</h1>
+	<% @url.each do |items| %>
+		<% items.each do |item|  %>
+		<div class = "feed_item">
+		<%= item %> <br>
+			<% end %><br><br>
+		</div>
+
+	<% end %>
