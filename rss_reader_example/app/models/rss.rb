@@ -1,6 +1,7 @@
 require 'rss'
 
 class RssReader
+	
 	def read_rss(link, amount = 10)
 		results = []
 		rss = RSS::Parser.parse(link, false)
