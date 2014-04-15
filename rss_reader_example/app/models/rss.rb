@@ -17,6 +17,11 @@ class RssReader
 		end
 	end
 
+	def make_number(number)
+		number = number.to_i
+		number < 1 ? 10 : number
+	end
+
 end
 
 

@@ -7,7 +7,8 @@ end
 
 post '/results' do
 	thing = RssReader.new
-	@url = thing.read_rss(params["url"])
+	@amount = thing.make_number(params["amount"])
+	@url = thing.read_rss(params["url"], @amount)
 	if @url != false
 		erb :results
 		else
