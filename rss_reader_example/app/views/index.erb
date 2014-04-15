@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>What RSS thing should we check?</h1>
+  <form id = "input_form" action = "/results" method = "post">
+    URL:   <input type="text" name = "url">
+    <h3 id = "amount"> If you would like more or less than 10 items returned click here
+    <button id = "amount_button">Change Amount</button>
+    </h3>
+    <div id = "hidden_field" style="display: none;">
+      Results:   <input type = "number" name = "amount" default = "0" >
+    </div>
+      <button type= "submit"> I am an RSS Robot, Feed Me!</button>
+  </form>
+
+</div>
