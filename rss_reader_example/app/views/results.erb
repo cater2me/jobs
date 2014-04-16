@@ -1,0 +1,13 @@
+<h1> Last <%= @amount %> Items</h1>
+	<div id = "results">
+	<% @url.each do |items| %>
+	<div class = "feed_item">
+		<% items.each do |item|  %>
+		<%= item %> <br>
+			<% end %><br><br>
+		</div>
+
+	<% end %>
+</div>
+
+	<img id = "marrow" src = "http://images.nymag.com/images/2/daily/2009/03/20090320_bone_560x375.jpg" >

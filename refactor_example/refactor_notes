@@ -1,0 +1,9 @@
+When refactoring this file, I originally started with naming.  Then thought to chain methods in order to help reduce space.
+I then decided that since the codes were so similar it would be better to create one method that encompassed both, then
+called different methods with subtle differences.  After a short time, I realized regex would be cleaner and quicker.
+I assumed that data would be input correctly and following the format given, but would be glad to work on it further to
+accept different parameters.
+
+
+For the RSS challange, I candidly did not know what RSS was.  I decided to make a simple working model, and afterwards work
+on it.  I was happy with it working when given proper rss addresses, and made a simple errors page to catch mistakes.

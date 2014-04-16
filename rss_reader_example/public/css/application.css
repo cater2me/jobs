@@ -1,0 +1,53 @@
+.container {
+	text-align: center;
+	border: solid black 1px;
+	margin: 3em 5em
+}
+
+.container button {
+	margin-bottom: 2em
+}
+
+.container #hidden_field {
+	margin: 1em;
+}
+
+#results {
+	display: inline-block;
+}
+.feed_item {
+	margin-left: 2em;
+	color: orange;
+	text-align: center;
+	width: 100%;
+}
+
+h1 {
+	margin-left: 2em;
+	font-size: 4em;
+	color: white;
+}
+
+.container h1 {
+	font-size: 3em;
+	color: black;
+}
+th {
+  text-align: left;
+}
+
+.options {
+	margin-left: 2em;
+	color: orange;
+}
+
+#marrow {
+	display: inline-block;
+	margin-left: 4em;
+	margin-bottom: 25em;
+}
+
+body{
+	background: gray;
+}
+
