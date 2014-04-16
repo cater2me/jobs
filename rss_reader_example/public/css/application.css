@@ -24,8 +24,8 @@
 
 h1 {
 	margin-left: 2em;
-	font-size: 5em;
-	color: gray;
+	font-size: 4em;
+	color: white;
 }
 
 .container h1 {
@@ -39,5 +39,15 @@ th {
 .options {
 	margin-left: 2em;
 	color: orange;
+}
+
+#marrow {
+	display: inline-block;
+	margin-left: 4em;
+	margin-bottom: 25em;
+}
+
+body{
+	background: gray;
 }
 
