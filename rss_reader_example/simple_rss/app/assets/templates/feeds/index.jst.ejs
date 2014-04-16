@@ -1,0 +1,26 @@
+<form class="form-inline">
+	<label>Enter Feed URL
+		<input class="form-control" type="text" name="feed[url]">
+	</label>
+
+	<button class="btn btn-primary">Submit</button>
+</form>
+
+
+<div id="entries">
+	<% if (entries) { %>
+		<h3>Results</h3>
+		<ol>
+		<% entries.forEach(function(entry, i) { %>
+			<% var datetime = new Date(entry.pubDate) %>
+			<li><a href="<%= entry.link %>" target="_blank"><%= entry.title %></a><br>
+				<small>by Author on <%= datetime.toLocaleDateString() %> at 
+				<%= datetime.toLocaleTimeString() %></small>
+				<p>
+					<%= entry.parsed_content %>
+				</p>
+			</li>
+		<% }) %>
+		</ol>
+	<% } %>
+</div>
