@@ -1,0 +1,31 @@
+<form class="form-inline">
+	<label>Enter Feed URL
+		<input class="form-control" type="text" name="feed[url]" id="url">
+	</label>
+
+	<button class="btn btn-primary">Submit</button>
+</form>
+
+
+<div id="entries">
+	<% if (entries) { %>
+		<h3>Results</h3>
+		<p>
+			<small>Note: Some overlays may not render content.<br>
+		(TODO: Override X-Frame-Option to allow all content in overlay modals.)</small>
+	</p>
+		<ol>
+		<% entries.forEach(function(entry, i) { %>
+			<% var datetime = new Date(entry.pubDate) %>
+			<li><strong><a href="<%= entry.link %>" target="_blank"><%= entry.title %></a></strong><br>
+				<small>by Author on <%= datetime.toLocaleDateString() %> at 
+				<%= datetime.toLocaleTimeString() %></small>
+				<p>
+					<span data-toggle="modal" data-target="#article-modal"><a href="#entry/<%= i %>">Read article in overlay</a></span> | <a href="<%= entry.link %>" target="_blank">Read in new window</a>
+				</p>
+			</li>
+		<% }) %>
+		</ol>
+	<% } %>
+</div>
+

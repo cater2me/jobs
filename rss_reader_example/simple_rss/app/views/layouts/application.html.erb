@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SimpleRss</title>
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	
+<div class="container">
+	
+  <div id="article-modal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+  	<div class="modal-body"></div>
+     </div>
+    </div>
+  </div>
+	
+	<h1>Simple RSS</h1>
+	<div id="content">
+		<%= yield %>
+	</div>
+</div>
+
+</body>
+</html>
