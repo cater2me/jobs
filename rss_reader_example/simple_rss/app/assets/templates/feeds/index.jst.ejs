@@ -10,6 +10,10 @@
 <div id="entries">
 	<% if (entries) { %>
 		<h3>Results</h3>
+		<p>
+			<small>Note: Some overlays may not render content.<br>
+		(TODO: Override X-Frame-Option to allow all content in overlay modals.)</small>
+	</p>
 		<ol>
 		<% entries.forEach(function(entry, i) { %>
 			<% var datetime = new Date(entry.pubDate) %>

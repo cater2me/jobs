@@ -15,7 +15,7 @@ SimpleRss.Routers.Feeds = Backbone.Router.extend({
 	show: function(id) {
 		var entry = SimpleRss.feeds.models[0].attributes.items[id]
 		
-		$('.modal-body').html('<iframe src="' + entry.link + '" width="100%" height="600px"></iframe>')
+		$('.modal-body').html('<iframe src="' + entry.link + '"></iframe>')
 	}
 
 });
