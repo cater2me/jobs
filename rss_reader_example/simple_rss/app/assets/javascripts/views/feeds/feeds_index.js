@@ -1,8 +1,4 @@
 SimpleRss.Views.FeedsIndex = Backbone.View.extend({
-	
-	// initialize: function() {
-	// 	this.listenTo(this.collection, "add", this.render);
-	// },
 
 	template: JST['feeds/index'],
 	
