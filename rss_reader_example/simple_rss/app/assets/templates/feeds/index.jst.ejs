@@ -13,9 +13,12 @@
 		<ol>
 		<% entries.forEach(function(entry, i) { %>
 			<% var datetime = new Date(entry.pubDate) %>
-			<li><span data-toggle="modal" data-target="#article-modal"><a href="#entry/<%= i %>"><%= entry.title %></a></span><br>
+			<li><strong><a href="<%= entry.link %>" target="_blank"><%= entry.title %></a></strong><br>
 				<small>by Author on <%= datetime.toLocaleDateString() %> at 
 				<%= datetime.toLocaleTimeString() %></small>
+				<p>
+					<span data-toggle="modal" data-target="#article-modal"><a href="#entry/<%= i %>">Read article in overlay</a></span> | <a href="<%= entry.link %>" target="_blank">Read in new window</a>
+				</p>
 			</li>
 		<% }) %>
 		</ol>
