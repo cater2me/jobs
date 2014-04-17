@@ -12,7 +12,7 @@ gem 'nokogiri'
 gem 'simple-rss'
 gem 'jquery-ui-rails'
 gem 'backbone-on-rails'
-gem 'selenium-webdriver'
+# gem 'selenium-webdriver'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

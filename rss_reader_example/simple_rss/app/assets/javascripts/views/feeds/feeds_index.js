@@ -12,7 +12,7 @@ SimpleRss.Views.FeedsIndex = Backbone.View.extend({
 	
 	render: function() {
 		var entries;
-		debugger
+		
 		if (this.collection.length > 0) {
 			entries = this.collection.models[0].attributes.items.slice(0,10)
 		}

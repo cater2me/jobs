@@ -13,14 +13,12 @@
 		<ol>
 		<% entries.forEach(function(entry, i) { %>
 			<% var datetime = new Date(entry.pubDate) %>
-			<li><a href="<%= entry.link %>" target="_blank"><%= entry.title %></a><br>
+			<li><span data-toggle="modal" data-target="#article-modal"><a href="#entry/<%= i %>"><%= entry.title %></a></span><br>
 				<small>by Author on <%= datetime.toLocaleDateString() %> at 
 				<%= datetime.toLocaleTimeString() %></small>
-				<p>
-					<%= entry.parsed_content %>
-				</p>
 			</li>
 		<% }) %>
 		</ol>
 	<% } %>
 </div>
+
