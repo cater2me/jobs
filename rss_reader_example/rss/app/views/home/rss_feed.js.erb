@@ -1,0 +1,1 @@
+$("#rss-results").html("<%= escape_javascript(render(:partial => '/home/feed_result_list', :locals=> {:feed_list=> @feed_list })) %>");

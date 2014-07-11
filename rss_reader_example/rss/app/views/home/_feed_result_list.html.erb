@@ -1,0 +1,41 @@
+ 
+
+
+<h1 class="text-center">RSS Feed </h1>
+<table class="table table-striped table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Date Published</th>
+      <th>Preview</th>
+    </tr>
+  </thead>
+ <tbody>
+    <% @feed_list.each do |f| %>
+		
+      <tr>
+		<td  style="width:20%;"><%= f[:title]%></td>
+		<td style="width:20%;"><%= f[:author]%></td>
+		<td style="width:20%;"><%=   f[:published].getlocal.strftime("%m/%d/%y %I:%M%p %Z")%></td>
+		<td><%=raw strip_tags(f[:preview])%><br/>
+		<a class="btn btn-success" href="<%= f[:url]%>">Link To Article</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a onclick="modalClick('<%= j f[:content]%>');"  class="btn btn-info modalBtn" data-toggle="modal" href="#modal">Read Article</a> 
+		</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+ <div id="modal" class="modal hide fade">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Article</h3>
+		</div>
+		<div class="modal-body">
+			<p>One fine body…</p>
+		</div>
+	
+    </div>
+
+
