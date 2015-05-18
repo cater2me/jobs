@@ -9,7 +9,7 @@ In order to be considered for a position at [cater2.me](http://cater2.me/jobs) p
 3. Refactor some Ruby code inside *refactor_example* directory
     * Rspec spec is provided
     * Please [refactor](http://www.refactoring.com) the provided example.
-    * Feel free to change the spec but all of the steps should be passing when your submit your code.
+    * Feel free to change the spec but all of the steps should be passing when you submit your code.
     * Please comment on what was refactored and why.
 4. In the *rss_reader_example* directory, please create a simple web app (use any Ruby based framework) that will mimic the basic functionality of the rss reader:
     * Take rss/atom feed link
