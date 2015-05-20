@@ -1,0 +1,28 @@
+<html>
+<head>
+  <title>RSS Reader</title>
+  <link rel="stylesheet" href="css/foundation.min.css" type="text/css">
+</head>
+<body>
+  <div class="container">
+    <div id="my-box" class="clearfix">
+      <div class="row">
+        <h1 class="text-center">RSS Reader</h1>
+      </div>
+      <div class="row center">
+        <div class="large-12 column">
+          <form id="feed-form" action="rss" method="POST">
+            <input class="input" type="text" id="feed" name="feed" placeholder="Enter RSS feed url and hit enter." />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="jquery.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="foundation.min.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+    $(document).foundation();
+  </script>
+</body>
+</html>
