@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RSS Reader</title>
+  <link rel="stylesheet" href="css/foundation.min.css" type="text/css">
+</head>
+<body>
+  <div class="container wrap">
+    <div id="my-box" class="clearfix">
+      <div class="row">
+        <h1 class="text-center">RSS Reader</h1>
+        <hr />
+      </div>
+      <div class="row center">
+        <div class="large-12 column">
+          <% @posts.each_with_index do |post, index| %>
+            <div class="post panel">
+              <h2><%= post.title %></h2>
+              <% date = post.pubDate || post.published %>
+              <p><%= Time.parse(date.to_s).strftime("%m/%d/%Y %I:%M%p") if date %></p>
+              <p><%= post.author  || post.dc_creator %></p>
+              <% preview = post.preview || post.description || post.content[0..300] %>
+              <p><%= CGI::unescape_html(preview) %> <a href="#" data-reveal-id="modal<%= index %>">More...</a></p>
+
+              <!-- modal -->
+              <div id="modal<%= index %>" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+                <h2 id="modalTitle"><%= post.title %></h2>
+                <p class="lead"><%= post.author  || post.dc_creator %> | <%= Time.parse(date.to_s).strftime("%m/%d/%Y %I:%M%p") if date %></p>
+                <p><%= CGI::unescape_html(post.content) %></p>
+                <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+              </div>
+              <!-- end modal -->
+
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="jquery.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="foundation.min.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+    $(document).foundation();
+  </script>
+</body>
+</html>
