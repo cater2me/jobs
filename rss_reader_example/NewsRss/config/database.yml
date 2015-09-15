@@ -1,0 +1,25 @@
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  encoding: unicode
+  pool: 5
+
+
+development:
+  <<: *default
+  database: "development_database_name"
+
+test:
+  <<: *default
+  database: "test_database_name"
+
+production:
+  <<: *default
+  database: "production_database_name"

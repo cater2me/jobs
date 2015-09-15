@@ -1,0 +1,51 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
+html {
+  font-family: helvetica;
+}
+
+a.title  {
+  text-decoration: none;
+}
+
+.inner-container {
+  padding: 27px 52px;
+}
+
+.submit-form {
+  margin-top: 40px;
+}
+
+
+.feed-show-container {
+  padding: 27px 52px;
+}
+
+.entries {
+  margin-top: 30px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.news-title {
+  margin-bottom: 30px;
+}
+
+.published {
+  margin: 0;
+}

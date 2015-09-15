@@ -1,0 +1,23 @@
+<div class="inner-container">
+  <h1 class="news-title">News</h1>
+  <div class="feed-index">
+    <% feeds.forEach(function(feed) { %>
+      <a class="title" href="#/feeds/<%=feed.id%>" ><%= feed.escape("title") %></a>
+      <p><%= feed.escape("url") %></p>
+      <button data-id="<%=feed.id%>" class="btn btn-danger delete">Delete</button>
+      <br><br>
+    <% }) %>
+  </div>
+
+  <div class="submit-form">
+    <form>
+      <label>
+      <input class="form-control" type="text" name="feed[title]"
+             placeholder="Title" value=""></label>
+      <label>
+      <input class="form-control" type="text" name="feed[url]"
+             placeholder="URL" value=""></label>
+      <input class="btn btn-primary" type="submit" value="Submit">
+    </form>
+  </div>
+</div>
