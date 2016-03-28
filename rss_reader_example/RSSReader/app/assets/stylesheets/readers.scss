@@ -1,0 +1,49 @@
+// Place all the styles related to the Readers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+  margin: auto;
+  max-width: 800px;
+}
+
+li {
+  background-color: white;
+  margin: 32px 0px;
+
+  -webkit-box-shadow: 0px 3px 3px -1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 3px 3px -1px rgba(0,0,0,0.75);
+  box-shadow: 0px 3px 3px -1px rgba(0,0,0,0.75);
+}
+
+section {
+  padding: 0px 16px;
+}
+
+h3 {
+  margin: 0px;
+  padding: 12px 16px;
+}
+
+a {
+  text-decoration: none;
+  color: #9E9E9E;
+}
+
+a:visited {
+  color: #9E9E9E;
+}
+
+p {
+  margin: 0px;
+}
+
+.date {
+  font-size: 12px;
+}
