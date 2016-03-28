@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   get 'readers/root'
 
   root 'readers#root'
+
+  namespace :api do
+    get 'get_feed' => 'feeds#get_feed'
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
