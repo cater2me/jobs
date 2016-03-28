@@ -1,21 +1,27 @@
 var React = require('react'),
-    LinkedStateMixin = require('react-addons-linked-state-mixin');
+    LinkedStateMixin = require('react-addons-linked-state-mixin'),
+    FeedActions = require('../actions/feed_actions');
 
 module.exports = React.createClass({
   mixins: [LinkedStateMixin],
 
   getInitialState: function() {
     return {
-      feed: ""
+      feedUrl: ""
     };
+  },
+
+  _onSubmit: function (event) {
+    FeedActions.getEntries(this.state.feedUrl);
+    event.preventDefault();
   },
 
   render: function () {
     return (
-      <form id="reader_form">
-        <input type="text" valueLink={this.linkState.feed} placeholder="Enter a feed url..."/>
+      <form id="reader_form" onSubmit={this._onSubmit}>
+        <input type="text" valueLink={this.linkState.feedUrl} placeholder="Enter a feed url..."/>
 
-        <input type="submit" value="Get feed"/>
+        <input type="submit" value="Get feed" />
       </form>
     );
   }

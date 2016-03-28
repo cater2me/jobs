@@ -1,6 +1,7 @@
 class Api::FeedsController < ApplicationController
+  helper Api::FeedsHelper
   def get_feed
-    # require 'byebug'; debugger
-    render json: {feed_url: params[:feed_url]}
+    doc = Nokogiri::XML(open(params[:feed_url]))
+    render json: {entries: Api::FeedsHelper::parse(doc)}
   end
 end

@@ -9,7 +9,7 @@ module.exports = {
       success: function (response) {
         Dispatcher.dispatch({
           actionType: FeedConstants.RECEIVE_ENTRIES,
-          entries: response
+          entries: response.entries
         });
       }
     });
