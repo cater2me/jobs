@@ -10,9 +10,14 @@ FeedStore.__onDispatch = function (payload) {
   switch(payload.actionType){
     case FeedConstants.ENTRIES_RECEIVED:
       entries = payload.entries;
-      Dispatcher.__emitChange();
+      this.__emitChange();
       break;
   }
 };
+
+FeedStore.all = function () {
+  return entries;
+};
+
 
 module.exports = FeedStore;

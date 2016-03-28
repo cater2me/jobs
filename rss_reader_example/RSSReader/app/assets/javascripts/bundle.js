@@ -19696,8 +19696,8 @@
 	    return React.createElement(
 	      'form',
 	      { id: 'reader_form', onSubmit: this._onSubmit },
-	      React.createElement('input', { type: 'text', valueLink: this.linkState.feedUrl, placeholder: 'Enter a feed url...' }),
-	      React.createElement('input', { type: 'submit', value: 'Get feed' })
+	      React.createElement('input', { className: 'feed-input', type: 'text', valueLink: this.linkState("feedUrl"), placeholder: 'Enter a feed url...' }),
+	      React.createElement('input', { className: 'feed-submit', type: 'submit', value: 'Get feed' })
 	    );
 	  }
 	});
@@ -19937,10 +19937,17 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
-	    FeedStore = __webpack_require__(171);
+	    FeedStore = __webpack_require__(171),
+	    FeedIndexItem = __webpack_require__(189);
 	module.exports = React.createClass({
 	  displayName: 'exports',
 
+
+	  getInitialState: function () {
+	    return {
+	      entries: FeedStore.all()
+	    };
+	  },
 
 	  componentDidMount: function () {
 	    this.entryListener = FeedStore.addListener(this._onEntriesChange);
@@ -19950,8 +19957,21 @@
 	    this.entryListener.remove();
 	  },
 
+	  _onEntriesChange: function () {
+	    this.setState({
+	      entries: FeedStore.all()
+	    });
+	  },
+
 	  render: function () {
-	    return React.createElement('ul', null);
+	    var entries = this.state.entries.map(function (entry, i) {
+	      return React.createElement(FeedIndexItem, { entry: entry, key: i });
+	    });
+	    return React.createElement(
+	      'ul',
+	      null,
+	      entries
+	    );
 	  }
 	});
 
@@ -19966,10 +19986,10 @@
 	  getEntries: function (feedUrl) {
 	    $.ajax({
 	      url: "/api/get_feed",
-	      query: { feed_url: feedUrl },
+	      data: { feed_url: feedUrl },
 	      success: function (response) {
 	        Dispatcher.dispatch({
-	          actionType: FeedConstants.RECEIVE_ENTRIES,
+	          actionType: FeedConstants.ENTRIES_RECEIVED,
 	          entries: response.entries
 	        });
 	      }
@@ -20316,9 +20336,13 @@
 	  switch (payload.actionType) {
 	    case FeedConstants.ENTRIES_RECEIVED:
 	      entries = payload.entries;
-	      Dispatcher.__emitChange();
+	      this.__emitChange();
 	      break;
 	  }
+	};
+
+	FeedStore.all = function () {
+	  return entries;
 	};
 
 	module.exports = FeedStore;
@@ -26768,6 +26792,51 @@
 
 	module.exports = FluxMixinLegacy;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ },
+/* 189 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+
+	module.exports = React.createClass({
+	  displayName: "exports",
+
+	  render: function () {
+	    return React.createElement(
+	      "li",
+	      { className: "entry" },
+	      React.createElement(
+	        "a",
+	        { href: this.props.entry.link },
+	        React.createElement(
+	          "h3",
+	          null,
+	          this.props.entry.title
+	        )
+	      ),
+	      React.createElement(
+	        "section",
+	        null,
+	        React.createElement(
+	          "p",
+	          null,
+	          React.createElement(
+	            "strong",
+	            null,
+	            this.props.entry.author
+	          )
+	        ),
+	        React.createElement("p", { className: "description", dangerouslySetInnerHTML: { __html: this.props.entry.description } }),
+	        React.createElement(
+	          "p",
+	          { className: "date" },
+	          this.props.entry.date
+	        )
+	      )
+	    );
+	  }
+	});
 
 /***/ }
 /******/ ]);

@@ -34,6 +34,10 @@ h3 {
 a {
   text-decoration: none;
   color: #9E9E9E;
+
+  &:hover {
+    color: #0078C2;
+  }
 }
 
 a:visited {
@@ -44,6 +48,50 @@ p {
   margin: 0px;
 }
 
+.description {
+  padding: 8px 0px;
+}
+
 .date {
   font-size: 12px;
+}
+
+.feed-input {
+  outline: none;
+  margin: auto;
+  line-height: 24px;
+  font-size: 24px;
+  padding: 8px;
+  border-radius: 4px;
+  width: 80%;
+  border: 1px solid white;
+}
+
+.feed-submit {
+  max-width: 100px;
+  padding: 8px;
+  margin: 32px auto;
+  box-sizing: content-box;
+  display: inline-block;
+  border: 0px solid black;
+  background: white;
+  border-radius: 4px;
+  transition: 0.2s;
+  font-size: 24px;
+  color: #525252;
+  outline: none;
+}
+
+.feed-submit:hover {
+  color: white;
+  background: #2173A6;
+}
+
+
+
+form {
+  margin: auto;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
 }

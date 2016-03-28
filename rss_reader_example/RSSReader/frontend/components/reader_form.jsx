@@ -19,9 +19,8 @@ module.exports = React.createClass({
   render: function () {
     return (
       <form id="reader_form" onSubmit={this._onSubmit}>
-        <input type="text" valueLink={this.linkState.feedUrl} placeholder="Enter a feed url..."/>
-
-        <input type="submit" value="Get feed" />
+        <input className="feed-input" type="text" valueLink={this.linkState("feedUrl")} placeholder="Enter a feed url..."/>
+        <input className="feed-submit" type="submit" value="Get feed" />
       </form>
     );
   }
