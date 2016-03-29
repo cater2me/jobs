@@ -1,0 +1,42 @@
+{
+  "name": "RSSReader",
+  "version": "1.0.0",
+  "description": "RSS reader as part of application to cater2me",
+  "main": "webpack.config.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "postinstall": "./node_modules/.bin/webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nmatte/RSSReader.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nmatte/RSSReader/issues"
+  },
+  "engines": {
+    "node": "4.1.1",
+    "npm": "2.1.x"
+  },
+  "dependencies": {
+    "babel-core": "^6.5.2",
+    "babel-loader": "^6.2.3",
+    "babel-preset-react": "^6.5.0",
+    "dateformat": "^1.0.12",
+    "flux": "^2.1.1",
+    "js-cookie": "^2.1.0",
+    "react": "^0.14.7",
+    "react-addons-linked-state-mixin": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-overlays": "^0.6.1",
+    "react-router": "^1.0.2",
+    "webpack": "^1.12.13"
+  },
+  "homepage": "https://github.com/nmatte/RSSReader#readme"
+}

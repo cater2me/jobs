@@ -1,0 +1,126 @@
+// Place all the styles related to the Readers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+  margin: auto;
+  max-width: 800px;
+}
+
+li {
+  background-color: white;
+  margin: 32px 0px;
+
+  -webkit-box-shadow: 0px 3px 3px -1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 3px 3px -1px rgba(0,0,0,0.75);
+  box-shadow: 0px 3px 3px -1px rgba(0,0,0,0.75);
+}
+
+section {
+  padding: 0px 16px;
+}
+
+h3 {
+  margin: 0px;
+  padding: 12px 16px;
+}
+
+a {
+  text-decoration: none;
+  color: #9E9E9E;
+
+  &:hover {
+    color: #0078C2;
+  }
+}
+
+a:visited {
+  color: #9E9E9E;
+}
+
+p {
+  margin: 0px;
+}
+
+.description {
+  padding: 8px 0px;
+}
+
+.date {
+  font-size: 12px;
+}
+
+.feed-input {
+  outline: none;
+  margin: auto;
+  line-height: 24px;
+  font-size: 24px;
+  padding: 8px;
+  border-radius: 4px;
+  width: 80%;
+  border: 1px solid white;
+
+  &:focus {
+    border-color: #2173A6;
+  }
+}
+
+.feed-submit {
+  max-width: 100px;
+  padding: 8px;
+  margin: 32px auto;
+  box-sizing: content-box;
+  display: inline-block;
+  border: 0px solid black;
+  background: white;
+  border-radius: 4px;
+  transition: 0.2s;
+  font-size: 24px;
+  color: #525252;
+  outline: none;
+}
+
+.feed-submit:hover {
+  color: white;
+  background: #2173A6;
+}
+
+.overlay-button {
+  padding: 8px;
+  margin: 12px auto;
+  box-sizing: content-box;
+  display: inline-block;
+  border: 1px solid #2173A6;
+  background: white;
+  border-radius: 4px;
+  transition: 0.2s;
+  font-size: 18px;
+  color: #525252;
+  outline: none;
+
+}
+
+.overlay-button:hover {
+  color: white;
+  background: #2173A6;
+}
+
+
+
+form {
+  margin: auto;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+}
+
+iframe {
+  border: none;
+  outline: none;
+}

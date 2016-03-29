@@ -3,24 +3,18 @@ module Template
     template = String.new(source_template)
 
     # Substitute for %CODE%
-    template_split_begin = template.index("%CODE%")
-    template_split_end = template_split_begin + 6
-    template_part_one =
-      String.new(template[0..(template_split_begin-1)])
-    template_part_two =
-      String.new(template[template_split_end..template.length])
-    code = String.new(req_id)
-    template =
-      String.new(template_part_one + code + template_part_two)
+    template = substitute_code(template, req_id, "%CODE%")
+
+    # all of the bloated code here was unnecessary. I've replaced it with substitute_code.
 
     # Substitute for %ALTCODE%
-    template_split_begin = template.index("%ALTCODE%")
-    template_split_end = template_split_begin + 9
-    template_part_one =
-      String.new(template[0..(template_split_begin-1)])
-    template_part_two =
-      String.new(template[template_split_end..template.length])
-    altcode = code[0..4] + "-" + code[5..7]
-    template_part_one + altcode + template_part_two
+    altcode = req_id[0..4] + "-" + req_id[5..7]
+    substitute_code(template, altcode,"%ALTCODE%")
+  end
+
+  # It's basically syntactic sugar at this point to have as its own method.
+  # gsub is a very concise way to replace certain contents of a string.
+  def substitute_code(template, new_value, target_string)
+    template.gsub(/#{target_string}/, new_value)
   end
 end
