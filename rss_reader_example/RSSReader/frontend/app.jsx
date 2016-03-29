@@ -1,7 +1,8 @@
 var React = require('react'),
     ReactDom = require('react-dom'),
     ReaderForm = require('./components/reader_form'),
-    ReaderIndex = require('./components/entry_index');
+    ReaderIndex = require('./components/entry_index'),
+    ContentOverlay = require('./components/content_overlay');
 
 var App = React.createClass({
   render: function () {
@@ -9,11 +10,11 @@ var App = React.createClass({
       <div>
         <ReaderForm />
         <ReaderIndex />
+        <ContentOverlay />
       </div>
     );
   }
 });
-
 
 document.addEventListener("DOMContentLoaded", function functionName() {
   var appDiv = document.getElementById('app');

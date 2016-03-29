@@ -65,6 +65,10 @@ p {
   border-radius: 4px;
   width: 80%;
   border: 1px solid white;
+
+  &:focus {
+    border-color: #2173A6;
+  }
 }
 
 .feed-submit {
@@ -87,6 +91,26 @@ p {
   background: #2173A6;
 }
 
+.overlay-button {
+  padding: 8px;
+  margin: 12px auto;
+  box-sizing: content-box;
+  display: inline-block;
+  border: 1px solid #2173A6;
+  background: white;
+  border-radius: 4px;
+  transition: 0.2s;
+  font-size: 18px;
+  color: #525252;
+  outline: none;
+
+}
+
+.overlay-button:hover {
+  color: white;
+  background: #2173A6;
+}
+
 
 
 form {
@@ -94,4 +118,9 @@ form {
   max-width: 800px;
   display: flex;
   flex-direction: column;
+}
+
+iframe {
+  border: none;
+  outline: none;
 }

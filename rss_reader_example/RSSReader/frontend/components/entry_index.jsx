@@ -26,8 +26,8 @@ module.exports = React.createClass({
   render: function () {
     var entries = this.state.entries.map(
       function (entry, i) {
-        return <FeedIndexItem entry={entry} key={i}/>;
-      }
+        return <FeedIndexItem entry={entry} key={i} overlayOpen={this.props.overlayOpen}/>;
+      }.bind(this)
     );
     return (
       <ul>

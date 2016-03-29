@@ -13,5 +13,12 @@ module.exports = {
         });
       }
     });
+  },
+
+  overlayOpen: function (url) {
+    Dispatcher.dispatch({
+      actionType: FeedConstants.OVERLAY_OPENED,
+      url: url
+    });
   }
 };
