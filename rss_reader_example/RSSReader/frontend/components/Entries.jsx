@@ -27,10 +27,8 @@ var Entries = React.createClass({
 
   feedEntries: function(){
 
-    var entries = this.props.feedData.entries.map(function(entry, i){
-      return(
-        <EntryDetail key={i} entry={entry} />
-      );
+    var entries = this.props.feedData.entries.slice(0,10).map(function(entry, i){
+      return <EntryDetail key={i} entry={entry} /> ;
     }, this);
 
     return entries;
@@ -39,7 +37,6 @@ var Entries = React.createClass({
   render: function() {
 
     var toScreen;
-
 
     if (this.props.feedData == 'INITIAL_STATE') {
       toScreen = <div className='entries-title'> enter an rss feed link </div>
@@ -50,9 +47,7 @@ var Entries = React.createClass({
     }
 
     return (
-      <div className='entries-main'>
-        {toScreen}
-      </div>
+      <div className='entries-main'> {toScreen} </div>
     );
   }
 
