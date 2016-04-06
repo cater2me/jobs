@@ -1,55 +1,50 @@
 var React = require('react');
-var PropTypes = React.PropTypes;
+var FullEntry = require('./FullEntry');
+var EntryHeader = require('./EntryHeader');
 
 var EntryDetail = React.createClass({
 
-  dateString: function() {
-    var date = new Date(this.props.entry.publishedDate);
-    return date.toDateString() + ", " + date.toLocaleTimeString();
+  getInitialState: function() {
+    return({ showingFull: false });
+  },
+
+  showFullPost: function() {
+    this.setState({ showingFull: true });
+  },
+
+  hideEntry: function() {
+    this.setState({ showingFull: false });
+  },
+
+  fullPost: function() {
+    if (!this.state.showingFull) {
+      return null;
+    } else {
+      return(
+        <FullEntry
+          entry={this.props.entry}
+          hideEntry={this.hideEntry}/>
+      );
+    }
   },
 
   render: function() {
 
-    debugger;
-
     return (
       <div className='entry-snippet-main'>
 
-        <div className='entry-title'>
-          {this.props.entry.title}
-        </div>
-
-        <div className='entry-info'>
-          <div className='entry-info-label'> Link: </div>
-          <div className='entry-info-text'>
-            <a href={this.props.entry.link}
-              className='entry-link'>
-              {this.props.entry.link}
-            </a>
-          </div>
-        </div>
-
-        <div className='entry-info'>
-          <div className='entry-info-label'> Date: </div>
-          <div className='entry-info-text'>
-            {this.dateString()}
-          </div>
-        </div>
-        <div className='entry-info'>
-          <div className='entry-info-label'> Author: </div>
-          <div className='entry-info-text'>
-            {this.props.entry.author}
-          </div>
-        </div>
+        <EntryHeader entry={this.props.entry} />
 
         <div className='entry-snippet-content'>
           {this.props.entry.contentSnippet}
         </div>
 
         <div className='full-entry-link'
-          onClick={this.showFullEntry}>
+          onClick={this.showFullPost}>
           See full post!
         </div>
+
+        {this.fullPost()}
 
       </div>
     );
