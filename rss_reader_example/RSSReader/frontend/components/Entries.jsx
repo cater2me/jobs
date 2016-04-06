@@ -10,11 +10,14 @@ var Entries = React.createClass({
         <div className='entries-title'>
           {this.props.feedData.title}
         </div>
-        <div className=''>
-          {this.props.feedData.link}
-        </div>
-        <div className=''>
+        <div className='entries-description'>
           {this.props.feedData.description}
+        </div>
+        <div className='entries-description'>
+          <a href={this.props.feedData.link}
+            className='entry-link'>
+            {this.props.feedData.link}
+          </a>
         </div>
         {this.feedEntries()}
       </div>

@@ -3,6 +3,11 @@ var PropTypes = React.PropTypes;
 
 var EntryDetail = React.createClass({
 
+  dateString: function() {
+    var date = new Date(this.props.entry.publishedDate);
+    return date.toDateString() + ", " + date.toLocaleTimeString();
+  },
+
   render: function() {
 
     debugger;
@@ -16,19 +21,34 @@ var EntryDetail = React.createClass({
 
         <div className='entry-info'>
           <div className='entry-info-label'> Link: </div>
-          <a href={this.props.entry.link}
-            className='entry-link'>
-            {this.props.entry.link}
-          </a>
+          <div className='entry-info-text'>
+            <a href={this.props.entry.link}
+              className='entry-link'>
+              {this.props.entry.link}
+            </a>
+          </div>
         </div>
 
         <div className='entry-info'>
           <div className='entry-info-label'> Date: </div>
-          {this.props.entry.publishedDate}
+          <div className='entry-info-text'>
+            {this.dateString()}
+          </div>
         </div>
-        <div className='entry-auth'>
+        <div className='entry-info'>
           <div className='entry-info-label'> Author: </div>
-          {this.props.entry.author}
+          <div className='entry-info-text'>
+            {this.props.entry.author}
+          </div>
+        </div>
+
+        <div className='entry-snippet-content'>
+          {this.props.entry.contentSnippet}
+        </div>
+
+        <div className='full-entry-link'
+          onClick={this.showFullEntry}>
+          See full post!
         </div>
 
       </div>
