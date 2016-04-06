@@ -6,11 +6,11 @@ Hi Cater2.me team!
 
 in the Rails project directory:
 
-`$ bundle install
-$ npm --yes init
-$ npm install
-$ rake test
-$ rails s`
+`$ bundle install` <br>
+`$ npm --yes init` <br>
+`$ npm install` <br>
+`$ rake test` <br>
+`$ rails s` <br>
 
 navigate to:
 
