@@ -1,0 +1,162 @@
+.url-input-main {
+  border-bottom: 3px solid #bab;
+  margin-left: 15px;
+  width: calc(100% - 30px);
+  height: 48px;
+  font-size: 18px;
+  position: fixed;
+  background-color: #fff;
+  z-index: 1;
+}
+
+.url-input-label {
+  display: inline-block;
+  position: relative;
+  color: gray;
+  top: 15px;
+  width: 125px;
+  float: right;
+}
+
+.url-input-field {
+  position: relative;
+  top: 12px;
+  font-size: 18px;
+  width: calc(100% - 280px);
+  float: right;
+  margin-right: 10px;
+}
+
+.url-input-button {
+  position: relative;
+  font-size: 18px;
+  color: gray;
+  top: 15px;
+  border: none;
+  background-color: #bdb;
+  width: 100px;
+  float: right;
+  margin-right: 10px;
+}
+
+.url-input-button:hover {
+  background-color: #beb;
+}
+
+.entries-main {
+  position: absolute;
+  width: calc(100% - 32px);
+  height: 1000px;
+  margin-top: 50px;
+  margin-left: 16px;
+}
+
+.entries-title {
+  font-size: 22px;
+  text-align: center;
+  padding: 15px;
+  padding-bottom: 5px;
+  color: gray;
+}
+
+.entries-description {
+  text-align: center;
+  color: gray;
+  padding-bottom: 4px;
+  font-size: 16px;
+}
+
+.alert {
+  color: #900;
+}
+
+.entry-snippet-main {
+  border: 1px solid black;
+  margin-top: 15px;
+  height: 175px;
+}
+
+.entry-title {
+  font-size: 18px;
+  padding-left: 85px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.entry-info-label {
+  display: inline-block;
+  width: 70px;
+  margin-right: 15px;
+  text-align: right;
+  color: gray;
+}
+
+.entry-link {
+  text-decoration: none;
+}
+
+.entry-link:hover {
+  text-decoration: underline;
+}
+
+.entry-info-text {
+  display: inline-block;
+}
+
+.entry-info {
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+.entry-snippet-content {
+  padding-left: 85px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  width: calc(100% - 86px);
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+
+.full-entry-link {
+  position: relative;
+  left: 85px;
+  color: blue;
+  width: 200px;
+}
+
+.full-entry-link:hover {
+  text-decoration: underline;
+}
+
+.full-entry-main {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  /*opacity: 0.75;*/
+  background-color: rgba(100,100,100,0.75);
+}
+
+.full-entry-body {
+  position: relative;
+  margin: 80px;
+  padding-top: 10px;
+  width: calc(100% - 160px);
+  height: calc(100% - 160px);
+  background-color: white;
+  border: 2px solid gray;
+  opacity: 1;
+  overflow-y: scroll;
+}
+
+.full-entry-title {
+  font-size: 22px;
+}
+
+.full-entry-text {
+  padding: 18px;
+  padding-left: 85px;
+  padding-right: 35px;
+}
