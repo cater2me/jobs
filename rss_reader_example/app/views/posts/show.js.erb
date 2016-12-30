@@ -1,0 +1,2 @@
+$('#modal-body').empty().html("<%= escape_javascript( render(:partial => 'post') ) %>");
+$('#modal-header').html("<h3><%= @post.title %></h3>")

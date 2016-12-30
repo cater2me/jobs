@@ -1,0 +1,23 @@
+<p>
+  <b>Title:</b>
+  <%= @post.title %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @post.url %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @post.author %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= raw @post.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_feed_post_path(@post) %> |
+<%= link_to 'Back', feed_posts_path %>

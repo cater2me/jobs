@@ -1,0 +1,5 @@
+<% if @post.content.blank? %>
+  <h4>This RSS feed does not push content, but you can go to the article by clicking <%= link_to 'here', @post.url %>.</h4>
+<% else %>
+  <%= raw @post.content %>
+<% end %>
