@@ -10,7 +10,7 @@ In order to be considered for a position at [cater2.me](http://cater2.me/jobs) p
     * Rspec spec is provided
     * Please [refactor](http://www.refactoring.com) the provided example.
     * Feel free to change the spec but all of the steps should be passing when your submit your code.
-    * Please comment on what was refactored and why.
+    * Please comment on what was refactored and why.d
 4. In the *rss_reader_example* directory, please create a simple web app (use any Ruby based framework) that will mimic the basic functionality of the rss reader:
     * Take rss/atom feed link
     * Return the last 10 entries
@@ -24,3 +24,13 @@ In order to be considered for a position at [cater2.me](http://cater2.me/jobs) p
         * Write good code that you want people to see
 6. Commit and push your code to your fork
 7. Send a pull request, we will review the code and get back to you
+
+### Plan
+- Make Feed model and requests specs
+- Setup API routes
+- Setup controller specs
+- Setup frontend React / Redux
+- Make factory girl seeds
+
+#### Entries  
+- Look into SimpleRSS, Nokogiri
