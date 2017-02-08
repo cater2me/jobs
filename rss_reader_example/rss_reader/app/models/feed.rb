@@ -17,7 +17,6 @@ class Feed < ActiveRecord::Base
   protected
     def set_title
       rss = SimpleRSS.parse(open(self.url, 'User-Agent' => 'ruby'))
-      #set title
       self.update(title: rss.channel.title)
     end
 end
