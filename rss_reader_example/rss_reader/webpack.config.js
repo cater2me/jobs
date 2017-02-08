@@ -2,7 +2,7 @@ module.exports = {
   entry: './frontend/entry.jsx',
   output: {
     path: 'app/assets/javascripts',
-    filename: 'bundle.js',
+    filename: 'bundle.js'
   },
   module: {
     loaders: [
@@ -13,12 +13,11 @@ module.exports = {
         query: {
           presets: ['es2015', 'react']
         }
-      },
-      { test: /\.css$/, loader: "style-loader!css-loader" }
+      }
     ]
   },
   devtool: 'source-map',
   resolve: {
-    extensions: ['', '.js', '.jsx' ]
+    extensions: ['', '.js', '.jsx']
   }
-};
+}
