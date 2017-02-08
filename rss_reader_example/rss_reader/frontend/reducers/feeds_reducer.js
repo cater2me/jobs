@@ -15,7 +15,7 @@ const feedsReducer = (state = initialState, action) => {
   let newState = {}
   switch (action.type) {
     case RECEIVE_FEEDS:
-      action.feeds.forEach(feed => { newState[feed.id] = feed })
+      action.feeds.forEach(feed => { newState[feed.id] = feed["attributes"] })
       return newState
     case RECEIVE_FEED:
       const newFeed = { [action.feed.id]: action.feed }

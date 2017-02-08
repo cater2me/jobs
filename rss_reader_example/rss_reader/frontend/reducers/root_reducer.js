@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import feedsReducer from './feed_reducer'
+import feedsReducer from './feeds_reducer'
 
 const rootReducer = combineReducers({
   feeds: feedsReducer

@@ -4,6 +4,23 @@ export const RECEIVE_FEEDS = 'RECEIVE_FEEDS'
 export const RECEIVE_FEED = 'RECEIVE_FEED'
 export const REMOVE_FEED = 'REMOVE_FEED'
 
+// async actions
+export const fetchFeeds = () => {
+  return (dispatch) => {
+    return util.fetchFeeds().then(response => {
+      dispatch(receiveFeeds(response.data))
+    })
+  }
+}
+
+export const createFeed = (data) => {
+  return (dispatch) => {
+    return util.createFeed(data).then(response => {
+      dispatch(receiveFeed(response.data))
+    })
+  }
+}
+
 // sync actions
 export const receiveFeed = feed => ({
   type: RECEIVE_FEED,
