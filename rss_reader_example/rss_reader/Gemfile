@@ -18,6 +18,7 @@ gem 'active_model_serializers'
 gem 'simple-rss'
 gem 'awesome_print'
 gem 'nokogiri'
+gem "validate_url"
 
 group :development do
   gem "better_errors"

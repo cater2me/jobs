@@ -31,6 +31,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    addressable (2.5.0)
+      public_suffix (~> 2.0, >= 2.0.2)
     arel (5.0.1.20140414130214)
     awesome_print (1.7.0)
     better_errors (2.1.1)
@@ -106,6 +108,7 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    public_suffix (2.0.5)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.5.5)
@@ -188,6 +191,9 @@ GEM
       railties (>= 3.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    validate_url (1.0.2)
+      activemodel (>= 3.0.0)
+      addressable
 
 PLATFORMS
   ruby
@@ -213,6 +219,7 @@ DEPENDENCIES
   spring-commands-rspec
   sqlite3
   twitter-bootstrap-rails
+  validate_url
 
 BUNDLED WITH
    1.14.3

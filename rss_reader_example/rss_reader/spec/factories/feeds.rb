@@ -1,7 +1,6 @@
 FactoryGirl.define do
   factory :feed do
-    title "MyText"
-    url "MyString"
-    note "MyText"
+    url { "http://lorem-rss.herokuapp.com/feed?unit=second&interval=" + (10*rand(6)).to_s }
+    note { Faker::Hacker.say_something_smart }
   end
 end

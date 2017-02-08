@@ -6,8 +6,8 @@
 #  title :text
 #  url   :string           not null
 #  note  :text
+#
 
-class Feed < ActiveRecord::Base
-  validates :url, presence: true, uniqueness: true
-  validates :url, :url => true
+class FeedSerializer < ActiveModel::Serializer
+  attributes :id, :title, :url, :note
 end
