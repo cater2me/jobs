@@ -23,6 +23,7 @@
 ### Custom ###
 *.db
 *.sqlite
+.byebug_history
 
 
 ### OSX ###
