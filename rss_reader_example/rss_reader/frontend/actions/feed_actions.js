@@ -13,6 +13,14 @@ export const fetchFeeds = () => {
   }
 }
 
+export const fetchFeed = (id) => {
+  return (dispatch) => {
+    return util.fetchFeed(id).then(response => {
+      dispatch(receiveFeed(response.data))
+    })
+  }
+}
+
 export const createFeed = (data) => {
   return (dispatch) => {
     return util.createFeed(data).then(response => {

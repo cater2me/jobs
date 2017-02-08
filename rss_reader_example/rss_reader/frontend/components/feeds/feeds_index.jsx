@@ -4,6 +4,8 @@ import React from 'react'
 import ListGroup from 'react-bootstrap/lib/ListGroup'
 import ListGroupItem from 'react-bootstrap/lib/ListGroupItem'
 import FeedsForm from './feeds_form'
+import Link from 'react-router/lib/Link'
+
 class FeedsIndex extends React.Component {
   componentDidMount () {
     this.props.fetchFeeds()
@@ -12,7 +14,10 @@ class FeedsIndex extends React.Component {
     const { feeds, createFeed } = this.props
     const _feeds = Object.keys(feeds).map((key) => {
       return (
-        <ListGroupItem key={key}><pre>{JSON.stringify(feeds[key])}</pre></ListGroupItem>
+        <ListGroupItem key={key}>
+          <Link to={`feeds/${key}`}>{feeds[key].title}</Link>
+          <pre>{JSON.stringify(feeds[key])}</pre>
+        </ListGroupItem>
       )
     })
     return (

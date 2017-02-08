@@ -7,6 +7,15 @@ export const fetchFeeds = (success, error) => {
   })
 }
 
+export const fetchFeed = (id, success, error) => {
+  return $.ajax({
+    method: 'GET',
+    url: `api/feeds/${id}`,
+    success,
+    error
+  })
+}
+
 export const createFeed = (data, success, error) => {
   return $.ajax({
     method: 'POST',
