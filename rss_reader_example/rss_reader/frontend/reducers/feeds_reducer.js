@@ -15,10 +15,10 @@ const feedsReducer = (state = initialState, action) => {
   let newState = {}
   switch (action.type) {
     case RECEIVE_FEEDS:
-      action.feeds.forEach(feed => { newState[feed.id] = feed["attributes"] })
+      action.feeds.data.forEach(feed => { newState[feed.id] = feed['attributes'] })
       return newState
     case RECEIVE_FEED:
-      const newFeed = { [action.feed.id]: action.feed["attributes"] }
+      const newFeed = { [action.feed.data.id]: action.feed.data['attributes'] }
       newState = merge({}, state, newFeed)
       return newState
     case REMOVE_FEED:

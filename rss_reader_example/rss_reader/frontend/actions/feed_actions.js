@@ -8,7 +8,7 @@ export const REMOVE_FEED = 'REMOVE_FEED'
 export const fetchFeeds = () => {
   return (dispatch) => {
     return util.fetchFeeds().then(response => {
-      dispatch(receiveFeeds(response.data))
+      dispatch(receiveFeeds(response))
     })
   }
 }
@@ -16,7 +16,7 @@ export const fetchFeeds = () => {
 export const fetchFeed = (id) => {
   return (dispatch) => {
     return util.fetchFeed(id).then(response => {
-      dispatch(receiveFeed(response.data))
+      dispatch(receiveFeed(response))
     })
   }
 }
@@ -24,7 +24,7 @@ export const fetchFeed = (id) => {
 export const createFeed = (data) => {
   return (dispatch) => {
     return util.createFeed(data).then(response => {
-      dispatch(receiveFeed(response.data))
+      dispatch(receiveFeed(response))
     })
   }
 }
