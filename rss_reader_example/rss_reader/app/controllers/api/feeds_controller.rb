@@ -16,7 +16,7 @@ class Api::FeedsController < ApplicationController
 
   def show
     feed = Feed.find(params[:id])
-    render json: feed
+    render json: feed, serializer: FeedShowSerializer, include: ['entries']
   end
 
   protected
