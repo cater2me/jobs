@@ -9,5 +9,5 @@
 #
 
 class FeedSerializer < ActiveModel::Serializer
-  attributes :id, :title, :url, :note
+  attributes :id, :title, :url
 end

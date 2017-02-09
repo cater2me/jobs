@@ -53,7 +53,8 @@ RSpec.describe "Feed Requests", type: :request do
       get "/api/feeds/#{feed.id}"
       json = JSON.parse(response.body)
 
-      expect(json["feed"]["entries"]).to be_present
+      expect(json["data"]["relationships"]["data"]).to be_present
+      expect(json["data"]["included"]["data"]).to be_present
     end
   end
 end
