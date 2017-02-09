@@ -9,7 +9,6 @@ class FeedShow extends React.Component {
     return (
       <div>
         <pre>{JSON.stringify(this.props.feed)}</pre>
-        <pre>{JSON.stringify(this.props)}</pre>
       </div>
     )
   }

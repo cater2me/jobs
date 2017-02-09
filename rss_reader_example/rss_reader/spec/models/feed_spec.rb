@@ -14,13 +14,13 @@ RSpec.describe Feed, type: :model do
       expect(feed.title).to be_present
     end
 
-    # it "entries are generated" do
-    #   expect(feed.entries).to be_present
-    # end
-    #
-    # it "returns the latest 10 entries" do
-    #   expect(feed.latest_entries).to be_present
-    #   expect(feed.latest_entries.size).to be <= 10
-    # end
+    it "entries are generated" do
+      expect(feed.entries).to be_present
+    end
+
+    it "returns the latest 10 entries" do
+      expect(feed.latest_entries).to be_present
+      expect(feed.latest_entries.size).to be <= 10
+    end
   end
 end

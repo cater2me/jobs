@@ -22,7 +22,7 @@ class FeedsIndex extends React.Component {
     })
     return (
       <div>
-        <FeedsForm createFeed={createFeed}/>
+        <FeedsForm createFeed={createFeed} />
         <h4>Feeds Index</h4>
         <ListGroup>{_feeds}</ListGroup>
       </div>
