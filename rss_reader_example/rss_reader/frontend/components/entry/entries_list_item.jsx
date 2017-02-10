@@ -14,12 +14,11 @@ class EntryListItem extends React.Component {
     toggleModal()
   }
   render () {
-    const { entry, handleEntryItemClick } = this.props
-
+    const { entry } = this.props
     return (
       <ListGroupItem >
         <div className="entry-list-item-content" onClick={this.handleClick}>
-          <h5>{entry.title}</h5> <p>by {entry.author}</p>
+          <h5>{entry.title}</h5> <p>{entry.author}</p>
           <section>{entry['published-date']}</section>
           <section>{entry.preview}</section>
         </div>

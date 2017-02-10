@@ -14,7 +14,7 @@ class Feed < ActiveRecord::Base
 
   after_create :set_title, on: [:create]
 
-  has_many :entries
+  has_many :entries, dependent: :destroy
 
   def latest_entries
     self.entries.order("pubDate DESC").limit(10)
