@@ -4,7 +4,8 @@ import { fetchFeed } from '../../actions/feed_actions'
 import FeedShow from './feed_show'
 
 const mapStateToProps = (state, {params}) => ({
-  feed: state.feeds[params.id]
+  feed: state.feeds[params.id],
+  entries: state.entries
 })
 
 const mapDispatchToProps = (dispatch, props) => ({
