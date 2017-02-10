@@ -17,6 +17,7 @@
 
 class EntrySerializer < ActiveModel::Serializer
   attributes  :id,
+              :link,
               :title,
               :author,
               :published_date,
