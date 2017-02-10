@@ -4,9 +4,9 @@ import merge from 'lodash/merge'
 const initialState = {
   '0': {
     title: '',
-    'dc-creator': '',
-    description: '',
-    'content-encoded': ''
+    author: '',
+    preview: '',
+    content: ''
   }
 }
 

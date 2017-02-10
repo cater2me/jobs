@@ -18,9 +18,26 @@
 class EntrySerializer < ActiveModel::Serializer
   attributes  :id,
               :title,
-              :link,
-              :pubDate,
-              :dc_creator,
-              :description,
-              :content_encoded
+              :author,
+              :published_date,
+              :preview,
+              :content
+
+  def author
+    object.author || object.contributor || object.dc_creator
+  end
+
+  def published_date
+    object.pubDate || object.published || object.created_at
+  end
+
+  def preview
+    preview = object.summary || object.description.split.take(10).join(' ') + '...'
+    preview.html_safe
+  end
+
+  def content
+    content = object.content_encoded || object.content || object.description || "No Content Fetched"
+    content.html_safe
+  end
 end
