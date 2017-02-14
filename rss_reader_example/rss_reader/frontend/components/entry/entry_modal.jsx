@@ -9,8 +9,8 @@ class EntryShow extends React.Component {
     const markUp = { __html: entry.content }
     return (
       <Modal {...this.props} dialogClassName="entry-modal"
-             onHide={toggleModal}
-             show={show}>
+        onHide={toggleModal}
+        show={show}>
         <Modal.Header>
           <Modal.Title>{entry.title}</Modal.Title>
           <p>{entry.author}</p>
