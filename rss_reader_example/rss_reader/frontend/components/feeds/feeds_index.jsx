@@ -16,7 +16,6 @@ class FeedsIndex extends React.Component {
       return (
         <ListGroupItem key={key}>
           <Link to={`feeds/${key}`}>{feeds[key].title}</Link>
-          <pre>{JSON.stringify(feeds[key])}</pre>
         </ListGroupItem>
       )
     })
