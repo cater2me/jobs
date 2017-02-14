@@ -14,7 +14,8 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
-require 'cgi'
+# require 'cgi'
+require 'html/sanitizer'
 
 class EntrySerializer < ActiveModel::Serializer
   attributes  :id,
@@ -34,8 +35,10 @@ class EntrySerializer < ActiveModel::Serializer
   end
 
   def preview
-    preview = object.summary || object.description.split.take(10).join(' ') + '...'
-    CGI.unescapeHTML(preview)
+    full_sanitizer = HTML::FullSanitizer.new
+    preview = object.summary || object.description
+    preview = CGI.unescapeHTML(preview)
+    full_sanitizer.sanitize(preview).split.take(10).join(' ') + '...'
   end
 
   def content

@@ -14,7 +14,7 @@ class Root extends React.Component {
   }
   fetchFeed (nextState, replace) {
     const { id } = nextState.params
-    store.dispatch(feedActions.fetchFeed(id))
+    this.props.store.dispatch(feedActions.fetchFeed(id))
   }
   render () {
     const { store } = this.props
