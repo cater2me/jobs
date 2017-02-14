@@ -22,10 +22,14 @@
     "react": "^15.4.x",
     "react-bootstrap": "^0.30.7",
     "react-dom": "^15.4.0",
+    "react-html-parser": "^1.0.3",
     "react-redux": "^4.4.6",
     "react-router": "^3.0.2",
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
     "webpack": "^1.13.3"
+  },
+  "devDependencies": {
+    "react-html-parser": "^1.0.3"
   }
 }

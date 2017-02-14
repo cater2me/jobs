@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/lib/Button'
 class EntryShow extends React.Component {
   render () {
     const { entry, show, toggleModal } = this.props
-    const markUp = { __html: entry.content }
+    const markUp = () => { return { __html: entry.content } }
     return (
       <Modal {...this.props} dialogClassName="entry-modal"
         onHide={toggleModal}
@@ -17,7 +17,7 @@ class EntryShow extends React.Component {
           <section><a href={entry.link}>{entry.link}</a></section>
         </Modal.Header>
         <Modal.Body>
-          <section dangerouslySetInnerHTML={markUp} />
+          <div dangerouslySetInnerHTML={markUp()} />
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={toggleModal}>Close</Button>

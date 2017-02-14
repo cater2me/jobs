@@ -14,6 +14,7 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
+require 'cgi'
 
 class EntrySerializer < ActiveModel::Serializer
   attributes  :id,
@@ -34,11 +35,11 @@ class EntrySerializer < ActiveModel::Serializer
 
   def preview
     preview = object.summary || object.description.split.take(10).join(' ') + '...'
-    preview.html_safe
+    CGI.unescapeHTML(preview)
   end
 
   def content
     content = object.content_encoded || object.content || object.description || "No Content Fetched"
-    content.html_safe
+    CGI.unescapeHTML(content)
   end
 end
