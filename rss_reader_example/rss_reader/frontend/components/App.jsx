@@ -1,8 +1,9 @@
 import React from 'react'
+import Link from 'react-router/lib/Link'
 
 const App = ({children}) => (
   <div>
-    <h1>Rss Reader</h1>
+    <h1><Link to="/">RSS Reader </Link></h1>
     {children}
   </div>
 )

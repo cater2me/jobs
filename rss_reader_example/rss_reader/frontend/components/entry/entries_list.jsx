@@ -33,12 +33,12 @@ class EntryList extends React.Component {
 
     const { selectedEntry } = this.state
     const entryModal = <EntryModal entry={selectedEntry}
-                                   show={this.state.showModal}
-                                   toggleModal={this.toggleModal} />
+      show={this.state.showModal}
+      toggleModal={this.toggleModal} />
 
     return (
       <ListGroup>
-        <h2>RSS Entries</h2>
+        <h2>Entries</h2>
         {_entries}
         {entryModal}
       </ListGroup>

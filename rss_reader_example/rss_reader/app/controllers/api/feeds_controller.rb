@@ -7,10 +7,10 @@ class Api::FeedsController < ApplicationController
   def create
     feed = Feed.new(feed_params)
 
-    if feed.save!
+    if feed.save
       render json: feed, status: :created
     else
-      render json: feed.errors, status: :unprocessable_entity
+      render json: feed.errors.full_messages, status: :unprocessable_entity
     end
   end
 

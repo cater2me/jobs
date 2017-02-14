@@ -4,11 +4,12 @@ import ControlLabel from 'react-bootstrap/lib/ControlLabel'
 import FormControl from 'react-bootstrap/lib/FormControl'
 import HelpBlock from 'react-bootstrap/lib/HelpBlock'
 import Button from 'react-bootstrap/lib/Button'
+import ErrorsList from './errors_list'
 
 class FeedsForm extends React.Component {
   constructor (props) {
     super(props)
-    this.state = { url: '' }
+    this.state = { url: '', errors: [] }
     this.update = this.update.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
@@ -18,7 +19,12 @@ class FeedsForm extends React.Component {
   handleSubmit () {
     const {url} = this.state
     const feed = {feed: {url}}
-    this.props.createFeed(feed)
+    const suc = () => { console.log('yay') }
+    const err = (resp) => {
+      let errors = resp.responseJSON
+      this.setState({errors})
+    }
+    this.props.createFeed(feed).then(suc.bind(this), err.bind(this))
   }
   getValidationState () {
     const reg = new RegExp(/^(ftp|http|https):\/\/[^ "]+$/)
@@ -31,6 +37,7 @@ class FeedsForm extends React.Component {
     }
   }
   render () {
+    const { errors } = this.state
     return (
       <form onSubmit={this.handleSubmit}>
         <FormGroup controlId="feedFormGroup" validationState={this.getValidationState()}>
@@ -44,6 +51,7 @@ class FeedsForm extends React.Component {
           <FormControl.Feedback />
           <HelpBlock>Requires a valid RSS url</HelpBlock>
         </FormGroup>
+        <ErrorsList errors={errors} />
         <Button type="submit">
           Submit
         </Button>
