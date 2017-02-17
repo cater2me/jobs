@@ -13,6 +13,16 @@ module Template
     template
   end
 
+  # This is the biggest refactoring decision, extracting a method for
+  # the duplicate logic present in substituting codes into the string.
+
+  # I came to this point after removing seemingly excessive String.new calls,
+  # re-arranging lines of code, and seeing the logic better.
+
+  # At this point I'd like to know if this kind of optimization is appropriate
+  # If we should consider doing a dangerous mutation on the source_template
+  # and discuss more optimizations such as changing the template in fewer passes.
+
   def substitute_code(template, code_str, code)
     split_idx = template.index(code_str)
     split_jdx = split_idx + code_str.size
