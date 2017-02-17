@@ -2,12 +2,14 @@
 
 This is a submission for a developer role at [cater2.me](http://cater2.me/jobs).
 
+![rssreader](https://cloud.githubusercontent.com/assets/6300995/23050049/d2ace738-f474-11e6-916e-cd88c48acac7.gif)
+
 Below I'll list additional comments regarding the two challenges.
 
-###### Refactor Example
+#### Refactor Example
 My main decision is extracting a `substitute_code` method after realizing the template logic was duplicated for both codes. There are further optimizations to consider but I'd like to know more about the kind of data this code would be working with in order to determine if further optimizations are appropriate or necessary.
 
-###### RSS reader
+#### RSS reader
 This project was built with Ruby 2.0.0 and Rails 4, with React/Redux as the front-end framework.
 
 To setup the app in the `rss_reader_example/rss_reader` directory
@@ -15,11 +17,11 @@ To setup the app in the `rss_reader_example/rss_reader` directory
 `$ bundle install`  
 `$ npm --yes init`  
 `$ npm install`  
-`$ rails s`  
+`$ rails server`  
 
 For the back-end, I utilized `SimpleRSS` to parse RSS urls and used `active model serializers` with a JSON API configuration to expose a RESTful `Feeds` api end point for the front-end.
 
-A lot of the api logic is handled in the feeds model and serializer, which is the json view template. Feel to examine `app/models/feed/feed.rb` to see how rss entires are generated and `app/serializers/entry_serializer.rb` to see the logic for exposing the parsed entries.
+Much of the business logic is handled in the feeds model and serializer, which is the json view template. Please examine `app/models/feed/feed.rb` to see how rss entires are generated and `app/serializers/entry_serializer.rb` to see the logic for exposing the parsed entries.
 
 For the front-end, I used React for my views and Redux for the app. All of this code can be examined within the `frontend` directory.
 
