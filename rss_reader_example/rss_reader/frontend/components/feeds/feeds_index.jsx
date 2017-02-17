@@ -22,6 +22,14 @@ class FeedsIndex extends React.Component {
     return (
       <div>
         <FeedsForm createFeed={createFeed} />
+        <section>
+        Try entering these urls:
+          <ul>
+            <li><pre>http://www.npr.org/rss/rss.php?id=1001</pre></li>
+            <li><pre>http://feeds.gawker.com/lifehacker/full.xml</pre></li>
+            <li><pre>http://rss.cnn.com/rss/cnn_topstories.rss</pre></li>
+          </ul>
+        </section>
         <h4>Feeds</h4>
         <ListGroup>{_feeds}</ListGroup>
       </div>

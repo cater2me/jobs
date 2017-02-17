@@ -29,7 +29,7 @@ class FeedsForm extends React.Component {
   getValidationState () {
     const reg = new RegExp(/^(ftp|http|https):\/\/[^ "]+$/)
     const {url} = this.state
-    console.log('reg.test(url)', reg.test(url))
+    
     if (reg.test(url)) {
       return 'success'
     } else {

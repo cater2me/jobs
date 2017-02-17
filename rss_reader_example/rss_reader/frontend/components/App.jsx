@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'react-router/lib/Link'
 
 const App = ({children}) => (
-  <div>
+  <div className="app">
     <h1><Link to="/">RSS Reader </Link></h1>
     {children}
   </div>

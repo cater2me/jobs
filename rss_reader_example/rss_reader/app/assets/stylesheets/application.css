@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+.app {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
