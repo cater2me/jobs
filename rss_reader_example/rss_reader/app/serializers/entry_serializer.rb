@@ -38,7 +38,8 @@ class EntrySerializer < ActiveModel::Serializer
     full_sanitizer = HTML::FullSanitizer.new
     preview = object.summary || object.description
     preview = CGI.unescapeHTML(preview)
-    full_sanitizer.sanitize(preview).split.take(10).join(' ') + '...'
+    preview = full_sanitizer.sanitize(preview)
+    preview.split.take(10).join(' ') + '...'
   end
 
   def content
